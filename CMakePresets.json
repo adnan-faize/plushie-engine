@@ -1,0 +1,41 @@
+{
+  "version": 6,
+  "configPresets": [
+    {
+      "name": "sdk-dev",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-dev",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_STANDARD": "23",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "PLUSHIE_STATIC": "OFF",
+        "PLUSHIE_DEV_BRIDGE": "ON"
+      }
+    },
+    {
+      "name": "sdk-release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/buid-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_CXX_STANDARD": "23",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "OFF",
+        "PLUSHIE_STATIC": "ON",
+        "PLUSHIE_DEV_BRIDGE": "OFF"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "sdk-dev",
+      "configurePreset": "sdk-dev",
+      "jobs": 10
+    },
+    {
+      "name": "sdk-release",
+      "configurePreset": "sdk-release",
+      "jobs": 10
+    }
+  ]
+}

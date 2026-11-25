@@ -1,0 +1,13 @@
+Language: Cpp
+BasedOnStyle: Google
+
+Standard: Latest
+ColumnLimit: 100
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+PointerAlignment: Left
+AllowShortFunctionsOnASingleLine: Empty
+SortIncludes:
+  Enabled: true
+  IgnoreCase: false

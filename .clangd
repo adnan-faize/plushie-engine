@@ -1,0 +1,10 @@
+CompileFlags:
+  CompilationDatabase: build-dev
+  Add:
+    - "-std=c++23"
+    - "-fno-exceptions"
+    - "-Wall"
+    - "-Wextra"
+Diagnostics:
+  UnusedIncludes: Strict
+  MissingIncludes: None

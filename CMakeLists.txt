@@ -1,0 +1,28 @@
+cmake_minimum_required(VERSION 3.25)
+project(plushie_engine VERSION 1.0.0 LANGUAGES C CXX)
+
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+set(CMAKE_VISIBILITY_INLINES_HIDDEN ON)
+
+include(cmake/modules/audio.cmake)
+include(cmake/modules/core.cmake)
+include(cmake/modules/debug.cmake)
+include(cmake/modules/extern.cmake)
+include(cmake/modules/network.cmake)
+include(cmake/modules/options.cmake)
+include(cmake/modules/os.cmake)
+include(cmake/modules/physics.cmake)
+include(cmake/modules/platform.cmake)
+include(cmake/modules/renderer.cmake)
+include(cmake/modules/runtime.cmake)
+include(cmake/modules/shared.cmake)
+
+if (PLUSHIE_BUILD_TESTS AND NOT CMAKE_CROSSCOMPILING)
+  enable_testing()
+  add_subdirectory(tests)
+endif ()
+
+include(cmake/package-sdk.cmake)
